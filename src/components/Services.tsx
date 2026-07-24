@@ -55,7 +55,7 @@ export default function Services() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 whileHover={{ y: -8 }}
-                className="group relative overflow-hidden rounded-2xl border border-gold/15 bg-paper-card p-8 shadow-md shadow-amber-900/5 transition-all duration-500 hover:border-gold/40 hover:shadow-xl hover:shadow-amber-900/10"
+                className="group relative overflow-hidden rounded-2xl border border-gold/15 bg-paper-card p-8 shadow-md shadow-black/20 transition-all duration-500 hover:border-gold/40 hover:shadow-xl hover:shadow-black/40"
               >
                 {/* hover sheen */}
                 <span className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-gold/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
@@ -68,7 +68,7 @@ export default function Services() {
                   <Icon size={24} />
                 </span>
 
-                <h3 className="font-display text-2xl leading-snug text-ink transition-colors duration-300 group-hover:text-gold-deep">
+                <h3 className="font-display text-2xl leading-snug text-ink transition-colors duration-300 group-hover:text-gold-light">
                   {service.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">

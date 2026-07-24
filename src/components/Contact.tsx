@@ -47,7 +47,7 @@ export default function Contact() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="space-y-6 lg:col-span-2"
           >
-            <div className="space-y-5 rounded-2xl border border-gold/15 bg-paper-card p-7 shadow-md shadow-amber-900/5">
+            <div className="space-y-5 rounded-2xl border border-gold/15 bg-paper-card p-7 shadow-md shadow-black/25">
               <a href={site.phoneHref} className="group flex items-center gap-4">
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-gold/25 bg-gold/10 text-gold transition-colors group-hover:bg-gold group-hover:text-white">
                   <Phone size={19} />
@@ -123,7 +123,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-2xl border border-gold/15 bg-paper-card p-7 shadow-md shadow-amber-900/5 sm:p-10 lg:col-span-3"
+            className="rounded-2xl border border-gold/15 bg-paper-card p-7 shadow-md shadow-black/25 sm:p-10 lg:col-span-3"
           >
             {sent ? (
               <motion.div
@@ -219,7 +219,7 @@ export default function Contact() {
 
         {/* CTA ribbon */}
         <Reveal className="mt-20">
-          <div className="relative overflow-hidden rounded-3xl border border-gold/20 bg-gradient-to-r from-paper-card via-paper-soft to-paper-card px-8 py-12 text-center shadow-md shadow-amber-900/5">
+          <div className="relative overflow-hidden rounded-3xl border border-gold/20 bg-gradient-to-r from-paper-card via-paper-soft to-paper-card px-8 py-12 text-center shadow-md shadow-black/25">
             <div
               aria-hidden
               className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/10 blur-[90px]"

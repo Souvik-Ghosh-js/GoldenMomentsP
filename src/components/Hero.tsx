@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { ChevronDown, Star } from "lucide-react";
 import { site } from "@/data/site";
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80";
+// Arnab & Raima under the fairy lights — one of the studio's own frames
+const HERO_IMAGE = "https://i.ytimg.com/vi/vJgTTKLBXM0/maxresdefault.jpg";
 
 const words = ["Turning", "fleeting", "seconds", "into"];
 
@@ -28,7 +28,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="mx-auto mb-8 flex w-fit items-center gap-2 rounded-full border border-gold/30 bg-paper/70 px-5 py-2 shadow-sm shadow-amber-900/10 backdrop-blur-md"
+          className="mx-auto mb-8 flex w-fit items-center gap-2 rounded-full border border-gold/30 bg-paper/70 px-5 py-2 shadow-sm shadow-black/30 backdrop-blur-md"
         >
           <span className="flex gap-0.5 text-gold">
             {Array.from({ length: 5 }).map((_, i) => (

@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  /* Light natural palette — warm ivory paper, espresso ink, antique gold */
-  --color-paper: #faf6ee;
-  --color-paper-soft: #f3ecdd;
-  --color-paper-card: #fffdf8;
-  --color-ink: #2e2617;
-  --color-gold: #b08a2e;
-  --color-gold-light: #d9bc78;
-  --color-gold-deep: #8a691d;
-  --color-muted: #7d715c;
+  /* Warm mid-dark palette — rich coffee browns (not black), cream text, antique gold */
+  --color-paper: #221c14;
+  --color-paper-soft: #1b1610;
+  --color-paper-card: #2c251b;
+  --color-ink: #f2ead8;
+  --color-gold: #d4a94e;
+  --color-gold-light: #ecd39a;
+  --color-gold-deep: #9a7524;
+  --color-muted: #b0a48c;
 
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
@@ -67,7 +67,7 @@ body {
 
 ::selection {
   background: var(--color-gold);
-  color: #fff;
+  color: #221c14;
 }
 
 /* Thin warm scrollbar */
@@ -78,22 +78,22 @@ body {
   background: var(--color-paper-soft);
 }
 ::-webkit-scrollbar-thumb {
-  background: #d8cbb0;
+  background: #453b28;
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-gold);
 }
 
-/* Gold gradient headline text — deeper golds so it reads on light paper */
+/* Gold gradient headline text — bright golds that glow on the dark coffee base */
 .text-gold-gradient {
   background: linear-gradient(
     100deg,
-    #8a691d 0%,
-    #c9a24d 30%,
-    #a4801f 50%,
-    #d9bc78 70%,
-    #8a691d 100%
+    #f4e3b5 0%,
+    #d4a94e 30%,
+    #f7ecca 50%,
+    #c1913a 70%,
+    #f4e3b5 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -102,17 +102,17 @@ body {
   animation: var(--animate-shimmer);
 }
 
-/* Soft ivory wash over hero imagery so dark text stays readable */
+/* Warm dusk wash over hero imagery so the cream text stays readable */
 .vignette::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at center, transparent 30%, rgba(250, 246, 238, 0.55) 100%),
+    radial-gradient(ellipse at center, transparent 30%, rgba(27, 22, 16, 0.6) 100%),
     linear-gradient(
       to bottom,
-      rgba(250, 246, 238, 0.9),
-      rgba(250, 246, 238, 0.62) 45%,
+      rgba(34, 28, 20, 0.78),
+      rgba(34, 28, 20, 0.42) 45%,
       var(--color-paper) 98%
     );
   pointer-events: none;

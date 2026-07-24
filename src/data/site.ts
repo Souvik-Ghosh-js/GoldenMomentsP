@@ -3,9 +3,9 @@
  *
  * NOTE FOR THE FUTURE ADMIN PANEL:
  * Every piece of editable content on the site (services, gallery images,
- * categories, testimonials, contact details) is read from this single module.
- * When the admin panel + backend arrive, replace these exports with API/CMS
- * fetches — the components consuming them will not need to change.
+ * categories, films, testimonials, contact details) is read from this single
+ * module. When the admin panel + backend arrive, replace these exports with
+ * API/CMS fetches — the components consuming them will not need to change.
  */
 
 export const site = {
@@ -23,6 +23,10 @@ export const site = {
     "https://www.google.com/maps?q=Ushti,+West+Bengal+743375&output=embed",
   youtubeUrl: "https://www.youtube.com/@goldenmomentsphotography2025",
 };
+
+/** Full-HD thumbnail of one of the studio's own YouTube videos. */
+export const ytThumb = (id: string) =>
+  `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
 
 export type Service = {
   id: string;
@@ -93,17 +97,17 @@ export const services: Service[] = [
 export type GalleryCategory =
   | "Wedding"
   | "Pre-Wedding"
-  | "Engagement"
-  | "Maternity & New Born"
-  | "Rice Ceremony & Birthday";
+  | "Rice Ceremony"
+  | "Birthday & Baby"
+  | "Ceremonies";
 
 export const galleryCategories: ("All" | GalleryCategory)[] = [
   "All",
   "Wedding",
   "Pre-Wedding",
-  "Engagement",
-  "Maternity & New Born",
-  "Rice Ceremony & Birthday",
+  "Rice Ceremony",
+  "Birthday & Baby",
+  "Ceremonies",
 ];
 
 export type GalleryImage = {
@@ -116,146 +120,103 @@ export type GalleryImage = {
 };
 
 /**
- * Static placeholder images (Unsplash) — replace with real client photos in
- * /public/images or via the admin panel later.
+ * Real frames from the studio's own shoots (YouTube video thumbnails).
+ * The admin panel will later let the client upload photos directly.
  */
 export const galleryImages: GalleryImage[] = [
   {
     id: "g1",
-    src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=900&q=80",
-    alt: "Bride and groom during wedding ceremony",
+    src: ytThumb("NwLpK35F_pw"),
+    alt: "Debayan & Mouli on their wedding day",
     category: "Wedding",
     tall: true,
   },
   {
     id: "g2",
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80",
-    alt: "Couple holding hands at their wedding",
+    src: ytThumb("XvKMgosCYds"),
+    alt: "Subhojit & Soumyasree with their wedding garlands",
     category: "Wedding",
   },
   {
     id: "g3",
-    src: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=900&q=80",
-    alt: "Couple laughing during pre-wedding shoot",
-    category: "Pre-Wedding",
+    src: ytThumb("CH_4gCHZrKQ"),
+    alt: "Ananya & Arumay at their reception",
+    category: "Wedding",
   },
   {
     id: "g4",
-    src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80",
-    alt: "Romantic outdoor pre-wedding moment",
-    category: "Pre-Wedding",
+    src: ytThumb("5y4CRlJoJu4"),
+    alt: "Madhab & Mousumi — a quiet moment together",
+    category: "Wedding",
     tall: true,
   },
   {
     id: "g5",
-    src: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=900&q=80",
-    alt: "Newly engaged couple celebrating",
-    category: "Engagement",
+    src: ytThumb("b1hhu6zkyJM"),
+    alt: "Jharna & Subrata at their evening reception",
+    category: "Wedding",
   },
   {
     id: "g6",
-    src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80",
-    alt: "Exchanging rings at the engagement",
-    category: "Engagement",
+    src: ytThumb("00L8TqFwWHc"),
+    alt: "Monisha, radiant on her wedding day",
+    category: "Wedding",
+    tall: true,
   },
   {
     id: "g7",
-    src: "https://images.unsplash.com/photo-1493894473891-10fc1e5dbd22?auto=format&fit=crop&w=900&q=80",
-    alt: "Maternity portrait in soft light",
-    category: "Maternity & New Born",
-    tall: true,
+    src: ytThumb("utNpimddHtg"),
+    alt: "Suhas & Srabanti's playful pre-wedding shoot in Kolkata",
+    category: "Pre-Wedding",
   },
   {
     id: "g8",
-    src: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=900&q=80",
-    alt: "Sleeping newborn wrapped in a blanket",
-    category: "Maternity & New Born",
+    src: ytThumb("1bgf6SVod_o"),
+    alt: "Sivanshi's rice ceremony with her parents",
+    category: "Rice Ceremony",
+    tall: true,
   },
   {
     id: "g9",
-    src: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=900&q=80",
-    alt: "Tiny newborn feet held by parents",
-    category: "Maternity & New Born",
+    src: ytThumb("ch3gIVIhbx0"),
+    alt: "Adhyudh's annaprashan celebration",
+    category: "Rice Ceremony",
   },
   {
     id: "g10",
-    src: "https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=900&q=80",
-    alt: "Birthday cake with glowing candles",
-    category: "Rice Ceremony & Birthday",
+    src: ytThumb("cyBBixuUQpk"),
+    alt: "Dipashree's rice ceremony",
+    category: "Rice Ceremony",
   },
   {
     id: "g11",
-    src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=80",
-    alt: "Family celebrating a birthday party",
-    category: "Rice Ceremony & Birthday",
-    tall: true,
+    src: ytThumb("UEMm6IX1rt0"),
+    alt: "Rishan's first birthday with his family",
+    category: "Birthday & Baby",
   },
   {
     id: "g12",
-    src: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=900&q=80",
-    alt: "Bride getting ready before the ceremony",
-    category: "Wedding",
+    src: ytThumb("u-3__e0RukI"),
+    alt: "Piu's baby shower",
+    category: "Birthday & Baby",
   },
   {
     id: "g13",
-    src: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=900&q=80",
-    alt: "Newlyweds sharing a joyful dance",
-    category: "Wedding",
+    src: ytThumb("qYFfHhSSwLo"),
+    alt: "Namrata's blessing ceremony",
+    category: "Ceremonies",
   },
   {
     id: "g14",
-    src: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80",
-    alt: "Bride celebrating with her friends",
-    category: "Wedding",
-    tall: true,
-  },
-  {
-    id: "g15",
-    src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=900&q=80",
-    alt: "Wedding bouquet in golden light",
-    category: "Wedding",
-  },
-  {
-    id: "g16",
-    src: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=900&q=80",
-    alt: "Couple walking through an open field",
-    category: "Pre-Wedding",
-  },
-  {
-    id: "g17",
-    src: "https://images.unsplash.com/photo-1522413452208-996ff3f3e740?auto=format&fit=crop&w=900&q=80",
-    alt: "Sunset silhouette of a couple in love",
-    category: "Pre-Wedding",
-    tall: true,
-  },
-  {
-    id: "g18",
-    src: "https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?auto=format&fit=crop&w=900&q=80",
-    alt: "Couple laughing together outdoors",
-    category: "Pre-Wedding",
-  },
-  {
-    id: "g19",
-    src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80",
-    alt: "Celebration dinner under fairy lights",
-    category: "Engagement",
-  },
-  {
-    id: "g20",
-    src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80",
-    alt: "Newborn cradled in loving hands",
-    category: "Maternity & New Born",
-  },
-  {
-    id: "g21",
-    src: "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?auto=format&fit=crop&w=900&q=80",
-    alt: "Golden balloons at a birthday celebration",
-    category: "Rice Ceremony & Birthday",
+    src: ytThumb("v0gXa50glxU"),
+    alt: "Swastika's mehendi & sangeet ceremony",
+    category: "Ceremonies",
   },
 ];
 
 export type FilmCategory =
   | "Wedding"
+  | "Pre-Wedding"
   | "Rice Ceremony"
   | "Birthday & Baby"
   | "Ceremonies";
@@ -263,6 +224,7 @@ export type FilmCategory =
 export const filmCategories: ("All" | FilmCategory)[] = [
   "All",
   "Wedding",
+  "Pre-Wedding",
   "Rice Ceremony",
   "Birthday & Baby",
   "Ceremonies",
@@ -277,9 +239,10 @@ export type Film = {
 };
 
 /**
- * Films from the studio's real YouTube channel (@goldenmomentsphotography2025).
- * The admin panel will later manage this list — adding a video only needs its
- * YouTube id, title, duration and category.
+ * All films from the studio's real YouTube channel
+ * (@goldenmomentsphotography2025). The admin panel will later manage this
+ * list — adding a video only needs its YouTube id, title, duration and
+ * category.
  */
 export const films: Film[] = [
   {
@@ -290,33 +253,27 @@ export const films: Film[] = [
   },
   {
     youtubeId: "NwLpK35F_pw",
-    title: "Debayan & Mouli · Cinematic Wedding Teaser",
+    title: "Debayan & Mouli · Cinematic Teaser",
     duration: "2:53",
     category: "Wedding",
   },
   {
-    youtubeId: "CH_4gCHZrKQ",
+    youtubeId: "utNpimddHtg",
+    title: "Suhas & Srabanti · Kolkata Pre-Wedding Story",
+    duration: "3:11",
+    category: "Pre-Wedding",
+  },
+  {
+    youtubeId: "ch3gIVIhbx0",
     title: "Adhyudh's Rice Ceremony · Cinematic Teaser",
     duration: "2:47",
     category: "Rice Ceremony",
   },
   {
-    youtubeId: "ejan_AC2h80",
-    title: "Swastika & Subham · Bengali Wedding Full Video",
-    duration: "1:21:48",
-    category: "Wedding",
-  },
-  {
-    youtubeId: "7ihhwF-3xrE",
+    youtubeId: "UEMm6IX1rt0",
     title: "Rishan's 1st Birthday",
     duration: "16:00",
     category: "Birthday & Baby",
-  },
-  {
-    youtubeId: "XvKMgosCYds",
-    title: "Subhojit Weds Soumyasree · Wedding Full Video",
-    duration: "1:02:21",
-    category: "Wedding",
   },
   {
     youtubeId: "v0gXa50glxU",
@@ -325,9 +282,21 @@ export const films: Film[] = [
     category: "Ceremonies",
   },
   {
-    youtubeId: "LsQOtYsx2_0",
-    title: "Namrata & Arijit · Wedding Full Video",
-    duration: "33:40",
+    youtubeId: "CH_4gCHZrKQ",
+    title: "Ananya Weds Arumay · Cinematic Teaser",
+    duration: "2:52",
+    category: "Wedding",
+  },
+  {
+    youtubeId: "TDrudLkqzgc",
+    title: "Aliva Weds Sourav · Cinematic Teaser",
+    duration: "2:45",
+    category: "Wedding",
+  },
+  {
+    youtubeId: "ejan_AC2h80",
+    title: "Swastika & Subham · Wedding Full Video",
+    duration: "1:21:48",
     category: "Wedding",
   },
   {
@@ -337,15 +306,15 @@ export const films: Film[] = [
     category: "Birthday & Baby",
   },
   {
-    youtubeId: "1bgf6SVod_o",
-    title: "Sivanshi's Rice Ceremony · Cinematic Film",
-    duration: "38:10",
-    category: "Rice Ceremony",
+    youtubeId: "LsQOtYsx2_0",
+    title: "Namrata & Arijit · Wedding Full Video",
+    duration: "33:40",
+    category: "Wedding",
   },
   {
-    youtubeId: "AEjIyI11bfU",
-    title: "Babita Weds Sandip · Bengali Wedding Full Video",
-    duration: "35:08",
+    youtubeId: "XvKMgosCYds",
+    title: "Subhojit Weds Soumyasree · Wedding Full Video",
+    duration: "1:02:21",
     category: "Wedding",
   },
   {
@@ -355,37 +324,61 @@ export const films: Film[] = [
     category: "Ceremonies",
   },
   {
+    youtubeId: "AEjIyI11bfU",
+    title: "Premananda & Monjushree · Cinematic Teaser",
+    duration: "2:34",
+    category: "Wedding",
+  },
+  {
+    youtubeId: "0S_tjKHsCns",
+    title: "Babita Weds Sandip · Wedding Full Video",
+    duration: "35:08",
+    category: "Wedding",
+  },
+  {
     youtubeId: "mgowjqoCwBk",
-    title: "Anuska Weds Tarak · Bengali Wedding Full Video",
+    title: "Anuska Weds Tarak · Wedding Full Video",
     duration: "49:23",
     category: "Wedding",
   },
   {
-    youtubeId: "ts5mG9aGcCM",
-    title: "Rice Ceremony of Dipashree",
-    duration: "20:08",
-    category: "Rice Ceremony",
-  },
-  {
     youtubeId: "asJwkbXTIwg",
-    title: "Souvik & Agamoni · Bengali Wedding Full Video",
+    title: "Souvik & Agamoni · Wedding Full Video",
     duration: "1:06:11",
     category: "Wedding",
   },
   {
     youtubeId: "vJgTTKLBXM0",
-    title: "Arnab & Raima · Bengali Wedding Full Video",
+    title: "Arnab & Raima · Wedding Full Video",
     duration: "56:27",
     category: "Wedding",
   },
   {
+    youtubeId: "7ihhwF-3xrE",
+    title: "Supratip & Chaitali · Cinematic Teaser",
+    duration: "3:16",
+    category: "Wedding",
+  },
+  {
     youtubeId: "5y4CRlJoJu4",
-    title: "Madhab & Mousumi · Bengali Wedding Full Video",
+    title: "Madhab & Mousumi · Wedding Full Video",
     duration: "46:34",
     category: "Wedding",
   },
   {
     youtubeId: "F2ZvLxJOWqk",
+    title: "Laboni & Suprabhat · Cinematic Teaser",
+    duration: "3:19",
+    category: "Wedding",
+  },
+  {
+    youtubeId: "b1hhu6zkyJM",
+    title: "Jharna Weds Subrata · Wedding Teaser",
+    duration: "3:12",
+    category: "Wedding",
+  },
+  {
+    youtubeId: "Mgm689lrrIc",
     title: "Rounak Weds Sutandra · Wedding Full Video",
     duration: "58:31",
     category: "Wedding",
@@ -398,15 +391,33 @@ export const films: Film[] = [
   },
   {
     youtubeId: "0ar1n_F5OzI",
-    title: "Subrata Weds Jharna · Cinematic Wedding Film",
+    title: "Subrata Weds Jharna · Cinematic Film",
     duration: "47:18",
     category: "Wedding",
   },
   {
     youtubeId: "00L8TqFwWHc",
-    title: "Raja & Monisha · Bengali Wedding Full Video",
+    title: "Raja & Monisha · Wedding Full Video",
     duration: "1:00:09",
     category: "Wedding",
+  },
+  {
+    youtubeId: "1bgf6SVod_o",
+    title: "Sivanshi's Rice Ceremony · Cinematic Film",
+    duration: "38:10",
+    category: "Rice Ceremony",
+  },
+  {
+    youtubeId: "ts5mG9aGcCM",
+    title: "Namrata Weds Arijit · Cinematic Teaser",
+    duration: "2:50",
+    category: "Wedding",
+  },
+  {
+    youtubeId: "cyBBixuUQpk",
+    title: "Rice Ceremony of Dipashree",
+    duration: "20:08",
+    category: "Rice Ceremony",
   },
 ];
 

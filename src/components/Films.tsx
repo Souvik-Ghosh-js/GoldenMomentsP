@@ -28,7 +28,7 @@ function FilmCard({
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="group"
     >
-      <div className="relative aspect-video overflow-hidden rounded-xl border-4 border-paper-card bg-black shadow-md shadow-amber-900/15 transition-shadow duration-500 group-hover:shadow-xl group-hover:shadow-amber-900/20">
+      <div className="relative aspect-video overflow-hidden rounded-xl border-4 border-paper-card bg-black shadow-md shadow-black/40 transition-shadow duration-500 group-hover:shadow-xl group-hover:shadow-black/60">
         {playing ? (
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0`}
@@ -55,12 +55,12 @@ function FilmCard({
             {/* play button */}
             <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center">
               <span className="absolute inset-0 rounded-full bg-gold/40 blur-md transition-all duration-500 group-hover:scale-150" />
-              <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-paper/90 text-gold-deep shadow-lg backdrop-blur transition-all duration-500 group-hover:scale-110 group-hover:bg-gold group-hover:text-white">
+              <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-paper/90 text-gold shadow-lg backdrop-blur transition-all duration-500 group-hover:scale-110 group-hover:bg-gold group-hover:text-white">
                 <Play size={22} fill="currentColor" className="ml-1" />
               </span>
             </span>
 
-            <span className="absolute left-3 top-3 rounded-full bg-paper/85 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-gold-deep backdrop-blur">
+            <span className="absolute left-3 top-3 rounded-full bg-paper/85 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-gold-light backdrop-blur">
               {category}
             </span>
             <span className="absolute bottom-3 right-3 rounded-md bg-black/75 px-2 py-1 text-xs tracking-wider text-white">
@@ -69,7 +69,7 @@ function FilmCard({
           </button>
         )}
       </div>
-      <h3 className="mt-4 line-clamp-2 font-display text-xl leading-snug text-ink transition-colors duration-300 group-hover:text-gold-deep">
+      <h3 className="mt-4 line-clamp-2 font-display text-xl leading-snug text-ink transition-colors duration-300 group-hover:text-gold-light">
         {title}
       </h3>
     </motion.article>

@@ -67,7 +67,7 @@ export default function Gallery() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.85 }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className={`group relative overflow-hidden rounded-xl border-4 border-paper-card shadow-md shadow-amber-900/15 ${
+                className={`group relative overflow-hidden rounded-xl border-4 border-paper-card shadow-md shadow-black/40 ${
                   img.tall ? "row-span-2" : ""
                 }`}
               >

@@ -35,11 +35,11 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0, rotate: -5 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-0 top-8 h-80 w-64 overflow-hidden rounded-2xl border-4 border-paper-card shadow-2xl shadow-amber-900/25"
+            className="absolute left-0 top-8 h-80 w-64 overflow-hidden rounded-2xl border-4 border-paper-card shadow-2xl shadow-black/50"
           >
             <Image
-              src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=700&q=80"
-              alt="Couple during a golden-hour shoot"
+              src="https://i.ytimg.com/vi/00L8TqFwWHc/maxresdefault.jpg"
+              alt="Monisha, radiant on her wedding day"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
             />
@@ -49,11 +49,11 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0, rotate: 4 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute bottom-0 right-0 h-80 w-64 overflow-hidden rounded-2xl border-4 border-paper-card shadow-2xl shadow-amber-900/25"
+            className="absolute bottom-0 right-0 h-80 w-64 overflow-hidden rounded-2xl border-4 border-paper-card shadow-2xl shadow-black/50"
           >
             <Image
-              src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=700&q=80"
-              alt="Bride portrait"
+              src="https://i.ytimg.com/vi/NwLpK35F_pw/maxresdefault.jpg"
+              alt="Debayan & Mouli on their wedding day"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
             />
@@ -64,7 +64,7 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-            className="absolute left-1/2 top-1/2 z-10 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 animate-float flex-col items-center justify-center rounded-full border border-gold/40 bg-paper/90 text-center shadow-lg shadow-amber-900/15 backdrop-blur"
+            className="absolute left-1/2 top-1/2 z-10 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 animate-float flex-col items-center justify-center rounded-full border border-gold/40 bg-paper/90 text-center shadow-lg shadow-black/40 backdrop-blur"
           >
             <span className="font-display text-3xl text-gold">8+</span>
             <span className="px-3 text-[10px] uppercase tracking-widest text-ink/60">
