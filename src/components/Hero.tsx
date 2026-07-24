@@ -1,26 +1,51 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, Star } from "lucide-react";
-import { site } from "@/data/site";
+import { site, ytThumb } from "@/data/site";
 
-// Arnab & Raima under the fairy lights — one of the studio's own frames
-const HERO_IMAGE = "https://i.ytimg.com/vi/vJgTTKLBXM0/maxresdefault.jpg";
+// The studio's cleanest frames (no text overlays) — rotated as a slideshow
+const HERO_IMAGES = [
+  ytThumb("vJgTTKLBXM0"), // Arnab & Raima under the fairy lights
+  ytThumb("00L8TqFwWHc"), // Monisha, radiant on her wedding day
+  ytThumb("NwLpK35F_pw"), // Debayan & Mouli with their garlands
+  ytThumb("5y4CRlJoJu4"), // Madhab & Mousumi — a quiet moment
+  ytThumb("b1hhu6zkyJM"), // Jharna & Subrata at their reception
+  ytThumb("XvKMgosCYds"), // Subhojit & Soumyasree
+];
+
+const SLIDE_INTERVAL_MS = 3000;
 
 const words = ["Turning", "fleeting", "seconds", "into"];
 
 export default function Hero() {
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setSlide((s) => (s + 1) % HERO_IMAGES.length),
+      SLIDE_INTERVAL_MS
+    );
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section
       id="home"
       className="vignette relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      {/* Ken-burns background */}
-      <div
-        aria-hidden
-        className="absolute inset-0 animate-kenburns bg-cover bg-center"
-        style={{ backgroundImage: `url(${HERO_IMAGE})` }}
-      />
+      {/* Ken-burns slideshow — all slides stay mounted so they preload and crossfade */}
+      {HERO_IMAGES.map((src, i) => (
+        <div
+          key={src}
+          aria-hidden
+          className={`absolute inset-0 animate-kenburns bg-cover bg-center transition-opacity duration-1000 ease-in-out ${
+            i === slide ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ backgroundImage: `url(${src})` }}
+        />
+      ))}
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 pt-28 pb-24 text-center sm:pt-32">
         {/* Rating badge — matches the Google listing */}
