@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  /* Light natural palette — warm ivory paper, espresso ink, antique gold */
+  --color-paper: #faf6ee;
+  --color-paper-soft: #f3ecdd;
+  --color-paper-card: #fffdf8;
+  --color-ink: #2e2617;
+  --color-gold: #b08a2e;
+  --color-gold-light: #d9bc78;
+  --color-gold-deep: #8a691d;
+  --color-muted: #7d715c;
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+
+  --animate-kenburns: kenburns 18s ease-in-out infinite alternate;
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-shimmer: shimmer 3.2s linear infinite;
+
+  @keyframes kenburns {
+    from {
+      transform: scale(1) translate(0, 0);
+    }
+    to {
+      transform: scale(1.12) translate(1.5%, -1.5%);
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes shimmer {
+    from {
+      background-position: 200% center;
+    }
+    to {
+      background-position: -200% center;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: #fff;
+}
+
+/* Thin warm scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-paper-soft);
+}
+::-webkit-scrollbar-thumb {
+  background: #d8cbb0;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Gold gradient headline text — deeper golds so it reads on light paper */
+.text-gold-gradient {
+  background: linear-gradient(
+    100deg,
+    #8a691d 0%,
+    #c9a24d 30%,
+    #a4801f 50%,
+    #d9bc78 70%,
+    #8a691d 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-shimmer);
+}
+
+/* Soft ivory wash over hero imagery so dark text stays readable */
+.vignette::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 30%, rgba(250, 246, 238, 0.55) 100%),
+    linear-gradient(
+      to bottom,
+      rgba(250, 246, 238, 0.9),
+      rgba(250, 246, 238, 0.62) 45%,
+      var(--color-paper) 98%
+    );
+  pointer-events: none;
+}
+
+/* Decorative serif drop line under section titles */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+}
